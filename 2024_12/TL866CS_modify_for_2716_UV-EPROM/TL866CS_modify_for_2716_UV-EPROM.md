@@ -4,11 +4,11 @@
 
 2716 是在七八十年代的古董 8 位计算机常见的 ROM 芯片，一般用来存储系统的代码，在游戏机和卡带中十分常见，其外观如下：
 
-<img src="pic/2716.jpg" alt="2716 ROM" style="zoom:30%;" align="left" />
+<img src="pic/2716.jpg" alt="2716 ROM" style="float: none;zoom:55%;" align="left" />
 
 和常见的很多ROM芯片一样，其需要通过擦除才可以写入新的数据，擦除是通过使用波长 253.7nm 的紫外线 C 波段来照射，同时要求的照射剂量为 15 瓦秒/立方厘米。芯片的透明窗体距离光源的距离为 2.54cm 左右。照射的时间长短和距离的长短的平方成正比。擦除器可以和我一样购买成品，也可以使用普通的消毒专用的紫外线灯光替代，但是貌似用于UV胶水固化的光源是不可以用于紫外线擦除的。在使用紫外线时注意防护，避免对皮肤和眼睛的伤害。专用的紫外擦除器如下图，其中带有一个机械定时结构：
 
-<img src="pic/UV_erase.jpg" alt="紫外线擦除器" style="zoom:50%;" align="left" />
+<img src="pic/UV_erase.jpg" alt="紫外线擦除器" style="float:none;zoom:50%;" align="left" />
 
 在使用 EPROM 擦除器将芯片内部的全部擦除为空 (0xFF) 之后, 就可以通过编程器对芯片进行编程，在现在这个时间点建议使用 XGecu T48 通用编程器（TL866三代）编程器，价格大概在300元左右。但是当初我为了省钱买了一个 XGecu TL866CS 二代，当然也是因为这个原因才有了下面的文章。不过对于开始折腾古董硬件的人来说，我现在的建议不要购买太古老的编程器，因为古老的编程器有的是并口的，有的对新的windows操作系统不兼容。
 
@@ -22,7 +22,9 @@
 
 [原文链接](https://www.eevblog.com/forum/testgear/modification-to-add-the-missing-21-and-25-volt-vpp-ranges-to-your-tl866ii-plus/)
 
-![原理图](pic\TL866_schemetic.jpg)
+<img src="pic/TL866_schemetic.jpg" alt="原理图" style="zoom:67%;" />
+
+
 
 通过原理图不难发现，其VPP编程电压是通过MC34063产生的，MC34063的升压输出电压的基本原理框图如下：
 
@@ -44,18 +46,18 @@
 
 拆出来的没有修改的电路板如下：
 
-![TL866电路板](pic/tl866_BeforeModify.jpg)
+<img src="pic/tl866_BeforeModify.jpg" alt="TL866电路板" style="zoom:47%;" />
 
 电路修改如下：
 
-![修改电路](pic/tl866_modify.jpg)
+<img src="pic/tl866_modify.jpg" alt="修改电路" style="zoom:50%;" />
 
 开关固定
 
-![开关固定](pic/tl866_switch_add.jpg)
+<img src="pic/tl866_switch_add.jpg" alt="开关固定" style="zoom:49%;" />
 
 外壳开孔和贴标签
 
-![外壳开孔和标签](pic/tl866_WithLabel.jpg)
+<img src="pic/tl866_WithLabel.jpg" alt="外壳开孔和标签" style="zoom:49%;" />
 
 完成改造，实际测试通过，如果感兴趣的朋友也可以尝试模仿。但是因为是有损改造，请在理解其原理之后进行，使用测试用的2716芯片进行测试，避免丢失或者损坏唯一的rom数据。
